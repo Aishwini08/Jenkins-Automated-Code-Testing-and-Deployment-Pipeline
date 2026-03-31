@@ -69,5 +69,22 @@ Successfully built a fully automated CI/CD pipeline where every push to GitHub t
 
 ---
 
+## 📷 Screenshots
+
+### Jenkins Pipeline
+![Jenkins Pipeline](screenshots/pipeline.png)
+
+---
+
+### App Deployment
+![App](screenshots/app.png)
+
+---
+
+### Webhook
+![Webhook](screenshots/webhooks.png)
+
+---
+
 
 
