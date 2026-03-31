@@ -2,27 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone') {
+        stage('Install Dependencies') {
             steps {
-                echo 'Cloning repo...'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                echo 'Building app...'
+                sh 'npm install'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Running tests...'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying app...'
+                sh 'npm test'
             }
         }
     }
