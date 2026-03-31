@@ -2,15 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Install Dependencies') {
+        stage('Build Docker Image') {
             steps {
-                sh 'npm install'
+                sh 'docker build -t my-node-app .'
             }
         }
 
-        stage('Test') {
+        stage('Run Container') {
             steps {
-                sh 'npm test'
+                sh 'docker run -d -p 3000:3000 my-node-app'
             }
         }
     }
