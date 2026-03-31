@@ -1,4 +1,10 @@
-console.log("Hello from Node App");
-console.log("Creating my first Jenkins pipeline");
-console.log("This application will be used to demonstrate automated code testing and deployment using Jenkins");
-console.log("This is the end of the Node.js application code");
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.write("Hello from Node App 🚀");
+  res.end();
+});
+
+server.listen(3000, '0.0.0.0', () => {
+  console.log("Server running on port 3000");
+});
