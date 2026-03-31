@@ -8,9 +8,13 @@ pipeline {
             }
         }
 
-        stage('Run Container') {
+        stage('Deploy Container') {
             steps {
-                sh 'docker run -d -p 3000:3000 my-node-app'
+                sh '''
+                docker stop my-container || true
+                docker rm my-container || true
+                docker run -d -p 3000:3000 --name my-container my-node-app
+                '''
             }
         }
     }
